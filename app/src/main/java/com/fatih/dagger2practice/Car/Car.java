@@ -1,4 +1,4 @@
-package com.fatih.dagger2practice;
+package com.fatih.dagger2practice.Car;
 
 import android.util.Log;
 
@@ -6,7 +6,7 @@ import javax.inject.Inject;
 
 public class Car {
 
-    @Inject Engine engine;
+    private Engine engine;
     private Wheels wheels;
 
     @Inject
@@ -23,6 +23,8 @@ public class Car {
     }
 
     public void drive(){
+
+        engine.start();
         Log.d("Car"," is driving...");
     }
 }

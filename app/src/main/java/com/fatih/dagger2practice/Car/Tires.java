@@ -1,4 +1,4 @@
-package com.fatih.dagger2practice;
+package com.fatih.dagger2practice.Car;
 
 import javax.inject.Inject;
 
