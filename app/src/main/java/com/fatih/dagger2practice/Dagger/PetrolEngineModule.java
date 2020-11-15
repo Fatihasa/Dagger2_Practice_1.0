@@ -3,22 +3,13 @@ package com.fatih.dagger2practice.Dagger;
 import com.fatih.dagger2practice.Car.Engine;
 import com.fatih.dagger2practice.Car.PetrolEngine;
 
+import dagger.Binds;
 import dagger.Module;
-import dagger.Provides;
 
 @Module
-public class PetrolEngineModule {
+public abstract class PetrolEngineModule {
 
-    private int horsePower;
-
-
-    public PetrolEngineModule(int horsePower) {
-        this.horsePower = horsePower;
-    }
-
-    @Provides
-     Engine providesEngine(){
-        return new PetrolEngine(horsePower);
-     }
+    @Binds
+    abstract Engine bindEngine(PetrolEngine engine);
 
 }
