@@ -4,31 +4,29 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ExampleApp;
 import com.fatih.dagger2practice.Car.Car;
 import com.fatih.dagger2practice.Dagger.CarComponant;
-import com.fatih.dagger2practice.Dagger.DaggerCarComponant;
 
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
     @Inject
-    Car car;
+    Car car1,car2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CarComponant carComponant = DaggerCarComponant.builder()
-                .horsePower(150)
-                .engineCapacity(1400)
-                .build();
+        CarComponant carComponant = ((ExampleApp) getApplication()).getAppComponant();
 
 
 
 
         carComponant.inject(this);
-        car.drive();
+        car1.drive();
+        car2.drive();
 
 
     }
